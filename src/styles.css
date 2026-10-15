@@ -145,3 +145,42 @@
   animation: reveal-up 0.7s ease-out both;
 }
 @keyframes reveal-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+@property --orbit-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@utility gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--accent), oklch(0.65 0.2 320));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@utility about-wash {
+  background:
+    radial-gradient(55% 45% at 12% 18%, oklch(0.546 0.215 262.9 / 9%), transparent 70%),
+    radial-gradient(50% 45% at 88% 72%, oklch(0.715 0.126 215.2 / 11%), transparent 70%),
+    radial-gradient(45% 40% at 55% 5%, oklch(0.65 0.19 320 / 7%), transparent 70%);
+}
+
+@utility gradient-orbit {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius-xl) + 2px);
+    background: conic-gradient(from var(--orbit-angle), var(--primary), var(--accent), oklch(0.65 0.2 320), var(--primary));
+    animation: orbit-spin 5s linear infinite;
+    z-index: -1;
+  }
+}
+
+@keyframes orbit-spin {
+  to { --orbit-angle: 360deg; }
+}
