@@ -18,7 +18,7 @@ export function Hero() {
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-40" aria-hidden />
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-[1.25fr_1fr] md:py-28">
         <div className="reveal">
-          <p className="eyebrow text-accent">AI Coach • Digital Educator • Consultant</p>
+          <p className="eyebrow text-accent">{"\n"}</p>
           <h1 className="bn mt-5 text-4xl font-bold leading-[1.3] sm:text-5xl lg:text-[3.4rem]">
             আমি AI দিয়ে আইডিয়াকে বাস্তব ডিজিটাল সলিউশনে রূপ দিতে কাজ করি।
           </h1>
