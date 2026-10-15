@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Check, ImageIcon } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ImageIcon } from "lucide-react";
 import portraitAsset from "@/assets/portrait.png.asset.json";
 import { approach, journey, projects, services } from "@/data/portfolio";
 
