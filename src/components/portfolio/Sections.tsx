@@ -1,5 +1,5 @@
-import { ArrowRight, ArrowUpRight, Check, ImageIcon, UserRound } from "lucide-react";
-import heroArt from "@/assets/hero-abstract.jpg";
+import { ArrowRight, ArrowUpRight, Check, ImageIcon } from "lucide-react";
+import portraitAsset from "@/assets/portrait.png.asset.json";
 import { approach, journey, projects, services } from "@/data/portfolio";
 
 function SectionHead({ label, title, center }: { label: string; title: string; center?: boolean }) {
@@ -39,13 +39,8 @@ export function Hero() {
         </div>
         <div className="reveal relative mx-auto w-full max-w-sm">
           <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-navy-border">
-            <img src={heroArt} alt="" width={1024} height={1280} className="h-full w-full object-cover" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-navy-muted">
-              <span className="flex h-20 w-20 items-center justify-center rounded-full border border-navy-border bg-navy/70">
-                <UserRound className="h-9 w-9" aria-hidden />
-              </span>
-              <span className="eyebrow">Portrait coming soon</span>
-            </div>
+            <img src={portraitAsset.url} alt="MD RONY" width={800} height={800} className="h-full w-full object-cover" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" aria-hidden />
           </div>
           <div className="absolute -bottom-4 -left-4 rounded-md border border-navy-border bg-navy-elevated px-4 py-3 text-xs">
             <p className="eyebrow text-accent">Philosophy</p>
