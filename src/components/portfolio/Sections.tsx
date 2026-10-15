@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Check, ImageIcon } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ImageIcon } from "lucide-react";
 import portraitAsset from "@/assets/portrait.png.asset.json";
 import { approach, journey, projects, services } from "@/data/portfolio";
 
@@ -53,25 +53,41 @@ export function Hero() {
 }
 
 export function About() {
+  const roles = [
+    { label: "AI Coach", dot: "bg-chart-1" },
+    { label: "Digital Educator", dot: "bg-chart-2" },
+    { label: "Consultant", dot: "bg-chart-4" },
+    { label: "AI Solution Builder", dot: "bg-chart-5" },
+  ];
   return (
-    <section id="about" className="py-24">
-      <div className="mx-auto grid max-w-6xl gap-14 px-5 md:grid-cols-[1fr_1.3fr]">
+    <section id="about" className="relative overflow-hidden py-24">
+      <div className="about-wash pointer-events-none absolute inset-0" aria-hidden />
+      <div className="relative mx-auto grid max-w-6xl gap-14 px-5 md:grid-cols-[1fr_1.3fr]">
         <div>
-          <SectionHead label="About Me" title="প্রযুক্তিকে সহজ করে বাস্তব কাজে লাগানোই আমার লক্ষ্য।" />
-          <div className="mt-10 rounded-lg border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
-            <p className="eyebrow text-muted-foreground">Core focus</p>
-            <ul className="mt-4 space-y-3 text-sm font-medium">
-              {["AI Coach", "Digital Educator", "Consultant", "AI Solution Builder"].map((r) => (
-                <li key={r} className="flex items-center gap-3"><Check className="h-4 w-4 text-primary" />{r}</li>
-              ))}
-            </ul>
+          <p className="eyebrow text-accent">About Me</p>
+          <h2 className="bn mt-3 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
+            প্রযুক্তিকে সহজ করে <span className="gradient-text">বাস্তব কাজে লাগানোই</span> আমার লক্ষ্য।
+          </h2>
+          <div className="accent-line mt-5" />
+          <div className="gradient-orbit mt-10 rounded-xl">
+            <div className="rounded-xl bg-card p-6 shadow-[var(--shadow-soft)]">
+              <p className="eyebrow text-muted-foreground">Core focus</p>
+              <ul className="mt-4 space-y-3 text-sm font-semibold">
+                {roles.map(({ label, dot }) => (
+                  <li key={label} className="flex items-center gap-3">
+                    <span className={`h-2.5 w-2.5 rounded-full ${dot}`} aria-hidden />
+                    {label}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
         <div className="bn space-y-5 text-lg leading-relaxed text-muted-foreground">
           <p>আমি MD RONY, বাংলাদেশ থেকে কাজ করি। CoachRony ব্র্যান্ডের মাধ্যমে মানুষ ও ব্যবসাকে AI এবং আধুনিক ডিজিটাল প্রযুক্তি ব্যবহার করে বাস্তব সমস্যার সমাধান করতে সাহায্য করি।</p>
           <p>ব্যাংকিং, শিক্ষাgfgfgfgfgfgfgfgg, ভূমি ডিজিটাইজেশন, গ্রাফিক ডিজাইন ও ফ্রিল্যান্সিং — বিভিন্ন ক্ষেত্রে কাজের অভিজ্ঞতা আমাকে শিখিয়েছে, প্রযুক্তি তখনই মূল্যবান যখন তা মানুষের দৈনন্দিন কাজ সহজ করে।</p>
-          <p>আমার বিশ্বাস — শুধু শেখা যথেষ্ট নয়, নিজের হাতে তৈরি করাটাই আসল। তাই আমি প্র্যাকটিক্যাল, প্রজেক্ট-ভিত্তিক পদ্ধতিতে শেখাই এবং কাজ করি।</p>
-          <p className="pt-2 font-[Montserrat] text-2xl font-extrabold italic tracking-tight text-foreground">— MD RONY</p>
+          <p className="rounded-r-lg border-l-4 border-l-primary bg-secondary/70 p-4 text-foreground">আমার বিশ্বাস — শুধু শেখা যথেষ্ট নয়, নিজের হাতে তৈরি করাটাই আসল। তাই আমি প্র্যাকটিক্যাল, প্রজেক্ট-ভিত্তিক পদ্ধতিতে শেখাই এবং কাজ করি।</p>
+          <p className="pt-2 font-[Montserrat] text-2xl font-extrabold italic tracking-tight"><span className="gradient-text">— MD RONY</span></p>
           <a href="#journey" className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">
             আমার কাজ ও অভিজ্ঞতা দেখুন <ArrowRight className="h-4 w-4" />
           </a>
