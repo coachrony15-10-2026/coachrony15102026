@@ -69,7 +69,7 @@ export function About() {
         </div>
         <div className="bn space-y-5 text-lg leading-relaxed text-muted-foreground">
           <p>আমি MD RONY, বাংলাদেশ থেকে কাজ করি। CoachRony ব্র্যান্ডের মাধ্যমে মানুষ ও ব্যবসাকে AI এবং আধুনিক ডিজিটাল প্রযুক্তি ব্যবহার করে বাস্তব সমস্যার সমাধান করতে সাহায্য করি।</p>
-          <p>ব্যাংকিং, শিক্ষা, ভূমি ডিজিটাইজেশন, গ্রাফিক ডিজাইন ও ফ্রিল্যান্সিং — বিভিন্ন ক্ষেত্রে কাজের অভিজ্ঞতা আমাকে শিখিয়েছে, প্রযুক্তি তখনই মূল্যবান যখন তা মানুষের দৈনন্দিন কাজ সহজ করে।</p>
+          <p>ব্যাংকিং, শিক্ষাgfgfgfgfgfgfgfgg, ভূমি ডিজিটাইজেশন, গ্রাফিক ডিজাইন ও ফ্রিল্যান্সিং — বিভিন্ন ক্ষেত্রে কাজের অভিজ্ঞতা আমাকে শিখিয়েছে, প্রযুক্তি তখনই মূল্যবান যখন তা মানুষের দৈনন্দিন কাজ সহজ করে।</p>
           <p>আমার বিশ্বাস — শুধু শেখা যথেষ্ট নয়, নিজের হাতে তৈরি করাটাই আসল। তাই আমি প্র্যাকটিক্যাল, প্রজেক্ট-ভিত্তিক পদ্ধতিতে শেখাই এবং কাজ করি।</p>
           <p className="pt-2 font-[Montserrat] text-2xl font-extrabold italic tracking-tight text-foreground">— MD RONY</p>
           <a href="#journey" className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">
