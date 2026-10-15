@@ -98,23 +98,40 @@ export function About() {
 }
 
 export function Services() {
+  const statusDot: Record<string, string> = {
+    Available: "bg-chart-2",
+    "In development": "bg-chart-4",
+    "By discussion": "bg-chart-5",
+  };
   return (
-    <section id="services" className="border-y border-border bg-card py-24">
-      <div className="mx-auto max-w-6xl px-5">
-        <SectionHead label="Services" title="AI ও ডিজিটাল প্রযুক্তির মাধ্যমে বাস্তব সমস্যা সমাধান" />
-        <div className="mt-14 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+    <section id="services" className="relative overflow-hidden border-y border-border bg-card py-24">
+      <div className="about-wash pointer-events-none absolute inset-0" aria-hidden />
+      <div className="relative mx-auto max-w-6xl px-5">
+        <p className="eyebrow text-accent">Services</p>
+        <h2 className="bn mt-3 max-w-2xl text-3xl font-bold leading-snug text-foreground sm:text-4xl">
+          AI ও ডিজিটাল প্রযুক্তির মাধ্যমে <span className="gradient-text">বাস্তব সমস্যা সমাধান</span>
+        </h2>
+        <div className="accent-line mt-5" />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ icon: Icon, title, desc, status }) => (
-            <article key={title} className="group flex flex-col bg-card p-7 transition-colors hover:bg-background">
-              <div className="flex items-center justify-between">
-                <Icon className="h-6 w-6 text-primary" aria-hidden />
-                <span className="text-[0.7rem] font-semibold uppercase tracking-wider text-muted-foreground">{status}</span>
-              </div>
-              <h3 className="mt-6 text-lg font-bold">{title}</h3>
-              <p className="bn mt-2 flex-1 leading-relaxed text-muted-foreground">{desc}</p>
-              <a href="#contact" className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-80 transition-opacity group-hover:opacity-100">
-                Discuss a project <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </a>
-            </article>
+            <div key={title} className="gradient-orbit rounded-xl">
+              <article className="group flex h-full flex-col rounded-xl bg-card p-7 shadow-[var(--shadow-soft)] transition-colors hover:bg-background">
+                <div className="flex items-center justify-between">
+                  <span className="grid h-11 w-11 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent shadow-[var(--shadow-soft)]">
+                    <Icon className="h-5 w-5 text-primary-foreground" aria-hidden />
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-[0.7rem] font-semibold uppercase tracking-wider text-muted-foreground">
+                    <span className={`h-2 w-2 rounded-full ${statusDot[status] ?? "bg-chart-3"}`} aria-hidden />
+                    {status}
+                  </span>
+                </div>
+                <h3 className="mt-6 text-lg font-bold">{title}</h3>
+                <p className="bn mt-2 flex-1 leading-relaxed text-muted-foreground">{desc}</p>
+                <a href="#contact" className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-80 transition-opacity group-hover:opacity-100">
+                  Discuss a project <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </a>
+              </article>
+            </div>
           ))}
         </div>
       </div>
